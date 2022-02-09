@@ -153,7 +153,8 @@ public class CertInstallerMain extends PreferenceActivity {
 
         String target = MIME_MAPPINGS.get(mimeType);
         if (target == null) {
-            throw new IllegalArgumentException("Unknown MIME type: " + mimeType);
+            Log.e(TAG, "Unknown MIME type: " + mimeType);
+            finish();
         }
 
         if (WIFI_CONFIG.equals(target)) {
